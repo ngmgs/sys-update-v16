@@ -1,0 +1,50 @@
+name: system-update-workflow
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: sys-sync-unit
+  cancel-in-progress: true
+
+jobs:
+  run-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: data-checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 1
+
+      - name: init-environment
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: cache-sys-files
+        uses: actions/cache@v4
+        with:
+          path: /tmp/sys_temp
+          key: ${{ runner.os }}-sys-${{ hashFiles('**/lockfiles') }}
+          restore-keys: |
+            ${{ runner.os }}-sys-
+
+      - name: data-processing
+        run: hugo --minify --cacheDir /tmp/sys_temp
+
+      - name: rsync-remote
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.VPS_KEY }}
+          REMOTE_HOST: ${{ secrets.VPS_HOST }}
+          REMOTE_USER: ${{ secrets.VPS_USER }}
+          REMOTE_PORT: ${{ secrets.SSH_PORT }}
+          TARGET: ${{ secrets.VPS_TARGET }}
+          SOURCE: "public/"
+          # 改行を含まないように1行で記述するのが安全です
+          ARGS: "-avz --delete -O"
+          SSH_ARGS: "-o ControlMaster=auto -o ControlPath=/tmp/ssh-%r@%h:%p -o ControlPersist=600"
