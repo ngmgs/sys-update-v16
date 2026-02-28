@@ -1,0 +1,19 @@
+[
+  {{- range .Site.RegularPages -}}
+  {{- if ne .Layout "search" -}}
+  {
+    "title": {{ .Title | jsonify }},
+    "permalink": {{ .Permalink | jsonify }},
+    "date": {{ .Date.Format "2006-01-02 15:04" | jsonify }},
+    "summary": {{ (or .Params.description (.Summary | plainify | truncate 160)) | jsonify }},
+    {{- $imgSrc := "" -}}
+    {{- $res := findRE `src="([^"]+)"` .Content 1 -}}
+    {{- if $res -}}
+      {{- $imgSrc = (index $res 0 | replaceRE `src="([^"]+)"` "$1") -}}
+    {{- end -}}
+    "image": {{ $imgSrc | jsonify }}
+  },
+  {{- end -}}
+  {{- end -}}
+  {} 
+]
