@@ -1,7 +1,7 @@
 languageCode: ja-jp
 
 baseURL: "https://test-web.wikinist.com/"
-title: "俺の爆速ブログ"
+title: "私の超速ブログ"
 theme: PaperMod
 
 pagination:
@@ -33,10 +33,10 @@ cascade:
 
 params:
   env: production
-  title: "俺の爆速ブログ"
+  title: "私の超速ブログ"
   description: "ブログ"
   keywords: [Blog, Portfolio, PaperMod]
-  author: "俺の爆速ブログ"
+  author: "私の超速ブログ"
   DateFormat: "2006年01月02日 15:04"
   defaultTheme: auto
   disableThemeToggle: false
