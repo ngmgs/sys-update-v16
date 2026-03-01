@@ -11,19 +11,19 @@
 </style>
 
 <!-- ピカチュウタグの最新10件 -->
-{{- $tag1 := "大特価" }}   <!-- ← ここだけ変える -->
+{{- $tag := "ピカチュウ" }}   <!-- ← ここだけ変える -->
 
 <header class="page-header">
-  <h1>{{ $tag1 }}の記事 
-    <a href="{{ "/tags/" | relLangURL }}{{ $tag1 | urlize }}/" style="font-size: 0.6em; margin-left: 10px;">
+  <h1>{{ $tag }}の記事 
+    <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}/" style="font-size: 0.6em; margin-left: 10px;">
       すべて見る →
     </a>
   </h1>
 </header>
 
 <div class="post-grid">
-{{- $pages1 := where .Site.RegularPages "Params.tags" "intersect" (slice $tag1) }}
-{{- range $index, $page := first 10 $pages1 }}
+{{- $pages := where .Site.RegularPages "Params.tags" "intersect" (slice $tag) }}
+{{- range $index, $page := first 10 $pages }}
 <article class="post-entry" style="position: relative; height: auto !important; overflow: visible !important;">
   <header class="entry-header">
     <h2>{{ $page.Title }}</h2>
@@ -71,14 +71,19 @@
 </div>
 
 <!-- リザードンタグの最新10件 -->
+{{- $tag := "リザードン" }}   <!-- ← ここだけ変える -->
+
 <header class="page-header">
-  <h1>リザードンの記事 
-    <a href="/tags/リザードン/" style="font-size: 0.6em; margin-left: 10px;">すべて見る →</a>
+  <h1>{{ $tag }}の記事 
+    <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}/" style="font-size: 0.6em; margin-left: 10px;">
+      すべて見る →
+    </a>
   </h1>
 </header>
+
 <div class="post-grid">
-{{- $charizard := where .Site.RegularPages "Params.tags" "intersect" (slice "リザードン") }}
-{{- range $index, $page := first 10 $charizard }}
+{{- $pages := where .Site.RegularPages "Params.tags" "intersect" (slice $tag) }}
+{{- range $index, $page := first 10 $pages }}
 <article class="post-entry" style="position: relative; height: auto !important; overflow: visible !important;">
   <header class="entry-header">
     <h2>{{ $page.Title }}</h2>
