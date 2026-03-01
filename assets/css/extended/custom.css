@@ -110,8 +110,21 @@
 }
 
 .btn.mercari {
-    background: linear-gradient(135deg, #ff0033 70%, #4db6d6 100%);
+    position: relative;
+    background: #ff0033;
     color: white !important;
+    overflow: hidden;
+}
+
+.btn.mercari::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: #4db6d6;
+    border-radius: 50%;
+    top: -6px;
+    right: -6px;
 }
 
 .btn.rakuten {
