@@ -40,27 +40,6 @@
     margin-bottom: 20px;
 }
 
-/* すべてのボタンを黄色いメインスタイルで統一 */
-/* .link-buttons a {
-    display: block;
-    background: #f0c14b;
-    padding: 12px;
-    color: #111 !important;
-    border: 1px solid #a88734;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none !important;
-    box-shadow: none !important;
-    transition: background 0.2s;
-} */
-
-/* ホバー時に少し色を濃くする演出 */
-/* .link-buttons a:hover {
-    background: #e2b13c;
-    opacity: 0.9;
-} */
-
 /* 下3つを横並びにする */
 .sub-buttons {
     display: flex;
@@ -88,6 +67,9 @@
     overflow-wrap: anywhere;
 }
 
+/* ===============================
+   共通ボタン
+================================= */
 .btn {
     display: block;
     padding: 12px;
@@ -98,17 +80,29 @@
     transition: all 0.2s ease;
 }
 
+
+/* ===============================
+   共通ホバー効果
+================================= */
 .btn:hover {
     filter: brightness(0.92);
     transform: translateY(1px);
 }
 
+
+/* ===============================
+   Amazonボタン
+================================= */
 .btn.amazon {
     background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
     border: 1px solid #a88734;
     color: #111 !important;
 }
 
+
+/* ===============================
+   メルカリボタン
+================================= */
 .btn.mercari {
     position: relative;
     background: #ff0033;
@@ -116,6 +110,7 @@
     overflow: hidden;
 }
 
+/* メルカリ青アクセント */
 .btn.mercari::after {
     content: "";
     position: absolute;
@@ -127,11 +122,19 @@
     right: -6px;
 }
 
+
+/* ===============================
+   楽天ボタン
+================================= */
 .btn.rakuten {
     background: #bf0000;
     color: white !important;
 }
 
+
+/* ===============================
+   Yahooボタン
+================================= */
 .btn.yahoo {
     background: #ff0033;
     color: white !important;
