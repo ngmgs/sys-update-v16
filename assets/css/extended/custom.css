@@ -86,3 +86,7 @@
     word-break: break-word;
     overflow-wrap: anywhere;
 }
+
+.entry-hint-parent {
+    display: block !important;
+}
