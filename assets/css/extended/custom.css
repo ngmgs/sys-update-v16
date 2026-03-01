@@ -76,9 +76,13 @@
 .entry-header h2 {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-
     -webkit-line-clamp: 2;
     line-clamp: 2;
-
     overflow: hidden;
+
+    line-height: 1.4;
+    margin: 0;
+
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
