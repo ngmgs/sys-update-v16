@@ -84,19 +84,20 @@
 
 <div class="post-grid">
 {{- $pages := where .Site.RegularPages "Params.tags" "intersect" (slice $tagName) }}
-{{- range first 10 $pages }}
+
+{{- range $index, $page := first 10 $pages }}
 <article class="post-entry" style="position: relative; height: auto !important; overflow: visible !important;">
   <header class="entry-header">
-    <h2>{{ .Title }}</h2>
+    <h2>{{ $page.Title }}</h2>
   </header>
   
   <div class="entry-content" style="max-height: none !important; overflow: visible !important; display: block !important;">
     
-    {{- if .Params.cover.image }}
+    {{- if $page.Params.cover.image }}
       <div style="margin-bottom: 15px; position: relative; z-index: 2; display: block; aspect-ratio: 4 / 3; width: 100%; max-width: 400px; background-color: #f0f0f0; border-radius: 8px; overflow: hidden;">
-        <a href="{{ .Permalink }}" style="display: block; width: 100%; height: 100%;">
-          <img src="{{ .Params.cover.image | absURL }}" 
-               alt="{{ .Title }}" 
+        <a href="{{ $page.Permalink }}" style="display: block; width: 100%; height: 100%;">
+          <img src="{{ $page.Params.cover.image | absURL }}" 
+               alt="{{ $page.Title }}" 
                loading="lazy"
                decoding="async"
                style="width: 100%; height: 100%; object-fit: cover;">
