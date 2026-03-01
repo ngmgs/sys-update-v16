@@ -11,18 +11,20 @@
 </style>
 
 <!-- ピカチュウタグの最新10件 -->
-{{- $tag := "大特価" }}   <!-- ← ここだけ変える -->
+{{- $tagName := "大特価" }}
+{{- $tagURL := "大特価" }}
 
 <header class="page-header">
-  <h1>{{ $tag }}の記事 
-    <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}/" style="font-size: 0.6em; margin-left: 10px;">
+  <h1>{{ $tagName }}の記事 
+    <a href="/tags/{{ $tagURL }}/" style="font-size: 0.6em; margin-left: 10px;">
       すべて見る →
     </a>
   </h1>
 </header>
 
 <div class="post-grid">
-{{- $pages := where .Site.RegularPages "Params.tags" "intersect" (slice $tag) }}
+{{- $pages := where .Site.RegularPages "Params.tags" "intersect" (slice $tagName) }}
+
 {{- range $index, $page := first 10 $pages }}
 <article class="post-entry" style="position: relative; height: auto !important; overflow: visible !important;">
   <header class="entry-header">
