@@ -74,6 +74,7 @@
 /* 記事ページ h1 と 一覧ページ h2 を2行で省略 */
 .post-title.entry-hint-parent,
 .entry-header h2 {
+    font-size: 24px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
 
