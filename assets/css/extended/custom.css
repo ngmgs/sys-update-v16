@@ -71,12 +71,14 @@
     flex: 1;
 }
 
-.post-title.entry-hint-parent {
+/* 記事ページ h1 と 一覧ページ h2 を2行で省略 */
+.post-title.entry-hint-parent,
+.entry-header h2 {
     display: -webkit-box;
     -webkit-box-orient: vertical;
 
-    -webkit-line-clamp: 2; /* Safari/Chrome系 */
-    line-clamp: 2;         /* 標準プロパティ */
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
 
     overflow: hidden;
 }
