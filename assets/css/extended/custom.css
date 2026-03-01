@@ -70,3 +70,13 @@
 .sub-buttons a {
     flex: 1;
 }
+
+.post-title.entry-hint-parent {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+
+    -webkit-line-clamp: 2; /* Safari/Chrome系 */
+    line-clamp: 2;         /* 標準プロパティ */
+
+    overflow: hidden;
+}
