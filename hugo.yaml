@@ -77,14 +77,14 @@ menu:
       name: 🔍 検索
       url: /search/
       weight: 5
-    - identifier: new-posts
-      name: 新着
-      url: /posts/
-      weight: 10
     - identifier: daitokka
       name: 大特価
       url: /tags/大特価/
-      weight: 20
+      weight: 10
+    - identifier: new-posts
+      name: 新着
+      url: /posts/
+      weight: 20    
     - identifier: tags
       name: tags
       url: /tags/
