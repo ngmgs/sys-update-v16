@@ -41,11 +41,11 @@
 }
 
 /* すべてのボタンを黄色いメインスタイルで統一 */
-.link-buttons a {
+/* .link-buttons a {
     display: block;
     background: #f0c14b;
     padding: 12px;
-    color: #111 !important; /* 文字色を黒で固定 */
+    color: #111 !important;
     border: 1px solid #a88734;
     border-radius: 8px;
     text-align: center;
@@ -53,14 +53,13 @@
     text-decoration: none !important;
     box-shadow: none !important;
     transition: background 0.2s;
-}
+} */
 
 /* ホバー時に少し色を濃くする演出 */
-.link-buttons a:hover {
-    /* background: #e2b13c;
-    opacity: 0.9; */
-    filter: brightness(0.9);
-}
+/* .link-buttons a:hover {
+    background: #e2b13c;
+    opacity: 0.9;
+} */
 
 /* 下3つを横並びにする */
 .sub-buttons {
@@ -89,7 +88,23 @@
     overflow-wrap: anywhere;
 }
 
-.btn.mercari {
-  background: linear-gradient(90deg, #ff6666 0%, #ff9999 100%);
-  box-shadow: 0 3px 0 #d44d4f; /* 少しだけ立体感 */
+.btn {
+    display: block;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    filter: brightness(0.92);
+    transform: translateY(1px);
+}
+
+.btn.amazon {
+    background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+    border: 1px solid #a88734;
+    color: #111 !important;
 }
