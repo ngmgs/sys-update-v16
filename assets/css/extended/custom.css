@@ -110,7 +110,7 @@
 }
 
 .btn.mercari {
-    background: #ea352d;
+    background: linear-gradient(to bottom, #ff1a40, #e6002e);
     color: white !important;
 }
 
