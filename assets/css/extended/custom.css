@@ -57,8 +57,9 @@
 
 /* ホバー時に少し色を濃くする演出 */
 .link-buttons a:hover {
-    background: #e2b13c;
-    opacity: 0.9;
+    /* background: #e2b13c;
+    opacity: 0.9; */
+    filter: brightness(0.9);
 }
 
 /* 下3つを横並びにする */
