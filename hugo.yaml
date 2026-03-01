@@ -81,9 +81,9 @@ menu:
       name: 大特価
       url: /tags/大特価/
       weight: 10
-    - identifier: tags
-      name: tags
-      url: /tags/
+    - identifier: new-posts
+      name: 新着
+      url: /posts/
       weight: 20
 
 pygmentsUseClasses: true
