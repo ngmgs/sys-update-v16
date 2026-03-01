@@ -89,16 +89,6 @@
 }
 
 .btn.mercari {
-  position: relative; /* 擬似要素をボタンに対して配置するため追加 */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 18px;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 12px; /* 丸みを大きく */
   background: linear-gradient(90deg, #ff6666 0%, #ff9999 100%);
   box-shadow: 0 3px 0 #d44d4f; /* 少しだけ立体感 */
-  transition: all 0.2s;
 }
