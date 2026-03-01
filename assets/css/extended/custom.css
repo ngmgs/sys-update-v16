@@ -85,4 +85,5 @@
 
     word-break: break-word;
     overflow-wrap: anywhere;
+    text-align: left !important;
 }
