@@ -77,9 +77,9 @@ menu:
       name: 🔍 検索
       url: /search/
       weight: 5
-    - identifier: categories
-      name: categories
-      url: /categories/
+    - identifier: daitokka
+      name: 大特価
+      url: /tags/大特価/
       weight: 10
     - identifier: tags
       name: tags
