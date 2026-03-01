@@ -60,3 +60,13 @@
     background: #e2b13c;
     opacity: 0.9;
 }
+
+/* 下3つを横並びにする */
+.sub-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.sub-buttons a {
+    flex: 1;
+}
